@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page Title</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Page-specific overrides, if needed */
+    #page-content {
+      padding: 20px;
+      width: 100%;
+    }
+
+    #page-content h1 {
+      border-bottom: 2px solid #000;
+      padding-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="outer-container">
+    <!-- Navigation dynamically loaded -->
+    <div id="nav-container"></div>
+
+    <!-- Main content area (customized per page) -->
+    <div class="box main-box">
+      <div id="page-content">
+        <h1>Page Title</h1>
+        <p>Replace this with page-specific content.</p>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="box box3" id="sidebar">
+      <h2>Sidebar Title</h2>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+      </ul>
+    </div>
+
+    <!-- Bottom left box -->
+    <div class="box box2" id="footer-links">
+      Footer Links
+    </div>
+
+    <!-- Secondary box (e.g. contact or sub-content) -->
+    <div class="box secondary-box" id="secondary-content">
+      Secondary Content
+    </div>
+
+    <!-- Bottom right box -->
+    <div class="box box4" id="social-media">
+      Social Media Links
+    </div>
+  </div>
+
+  <script src="js/load-template.js"></script>
+</body>
+</html>

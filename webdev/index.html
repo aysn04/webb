@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Page-specific styles */
+    #page-content {
+      padding: 20px;
+      width: 100%;
+    }
+
+    #page-content h1 {
+      border-bottom: 2px solid #000;
+      padding-bottom: 10px;
+    }
+
+    /* Hero Styles */
+    #hero-container {
+      text-align: center;
+      margin: 40px 0 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start; /* Keep the image at the top */
+      height: auto; /* Prevent the container from stretching to the full height */
+    }
+
+    #hero-image {
+      width: auto; /* Make it smaller in both dimensions */
+      height: 50%; /* Adjust the height of the image */
+      max-height: 360px; /* Prevent the image from getting too big */
+      object-fit: cover;
+      border: 2px solid #000;
+      border-radius: 8px;
+      margin-bottom: 20px; /* Space between image and title */
+    }
+
+    #hero-title {
+      font-size: 1.8rem; /* Slightly smaller title */
+      font-weight: bold;
+      margin-top: 20px; /* Space between image and text */
+      color: #333;
+    }
+
+    /* Ensuring outer-container grid layout and gap */
+    .outer-container {
+      display: grid;
+      grid-template-columns: 250px 1fr 250px;
+      grid-template-rows: 1fr 20px 1fr;
+      gap: 20px; /* Restore the gap between boxes */
+      width: 1200px;
+      height: 800px;
+      background-color: #e6e0d2;
+      border: 2px solid #555;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .box {
+      background: #fff;
+      border: 2px solid #000;
+      display: flex;
+      font-weight: bold;
+    }
+
+    /* Secondary Box (Hero Section) */
+    .secondary-box {
+      grid-column: 2 / 3;
+      grid-row: 3 / 4; /* Position it in the correct grid row */
+      margin-top: 50; /* Ensure space between main and secondary box */
+      height: 70%; /* Ensure it takes the full height */
+      box-sizing: border-box; /* Prevent padding from affecting layout */
+    }
+
+    /* Bottom Boxes */
+    .box2, .box4 {
+      height: 70%; /* Make bottom boxes smaller */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="outer-container">
+    <!-- Navigation loaded dynamically -->
+    <div id="nav-container"></div>
+
+    <!-- Main content -->
+    <div class="box main-box">
+      <div id="page-content">
+        <h1>Welcome to the Home Page</h1>
+        <p>This is your homepage content. You can customize this text.</p>
+      </div>
+    </div>
+
+    <!-- Hero Section in secondary box -->
+    <div class="box secondary-box" id="hero-container">
+      <img src="images/HR_Latest_Song.jpg" id="hero-image" alt="Hero Image" />
+      <div id="hero-title">Your Title Goes Here</div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="box box3" id="sidebar">
+      <h2>Sidebar</h2>
+      <ul>
+        <li>Item A</li>
+        <li>Item B</li>
+      </ul>
+    </div>
+
+    <!-- Footer and other boxes -->
+    <div class="box box2" id="footer-links">Footer Links</div>
+    <div class="box box4" id="social-media">Social Media Links</div>
+  </div>
+
+  <script src="js/load-template.js"></script>
+</body>
+</html>

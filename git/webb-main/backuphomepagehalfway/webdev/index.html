@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="outer-container">
+    <!-- Navigation -->
+    <div id="nav-container"></div>
+
+    <!-- Main Content + Hero inside -->
+    <div class="box main-box">
+      <div id="page-content">
+        <h2>Hasan Raheem bhaiii</h2>
+        <div id="hero-container">
+          <img src="images/HR_Latest_Song.jpg" id="hero-image" alt="Image of latest song cover" />
+          <div id="hero-title">Loading latest song info...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Secondary box still present -->
+    <div class="box secondary-box">
+      <div class="content-area">
+        <h2>Welcome to the unofficial fan site for Hasan Raheem! Stay tuned for updates, music, and more!</h2>
+        <p>A fresh and soulful voice in Pakistan’s contemporary music scene. Hailing from Gilgit, Hasan began his musical journey while studying medicine, and has since grown into one of the country’s most exciting independent artists. Blending R&B, indie pop, and electronic influences, he has created a distinct sound that resonates deeply with a new generation of listeners.</p>
+        <p>Over the past few years, his emotionally raw lyrics and laid-back vibe have built a loyal following. Today, <b><span id="spotify-listeners"></b>Hasan Raheem boasts an incredible fanbase.</span> Explore his latest tracks, performances, and more right here.</p>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="box box3" id="sidebar">
+      <h2>Sidebar</h2>
+      <ul>
+        <li>Item A</li>
+        <li>Item B</li>
+      </ul>
+    </div>
+
+    <!-- Bottom left -->
+    <div class="box box2" id="footer-links">Footer Links</div>
+
+    <!-- Bottom right -->
+    <div class="box box4" id="social-media">Upcoming Events</div>
+  </div>
+
+  <script src="js/load-template.js"></script>
+
+  <!-- Script to load LatestSong from json/messages.json -->
+  <script>
+    fetch('json/messages.json')
+      .then(response => {
+        if (!response.ok) throw new Error("Could not load messages.json");
+        return response.json();
+      })
+      .then(data => {
+        const message = data.LatestSong || "🎵 Stay tuned for the latest drop!";
+        document.getElementById("hero-title").innerHTML = message;
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById("hero-title").textContent = "🎵 Couldn't load song info.";
+      });
+  </script>
+</body>
+</html>
